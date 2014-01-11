@@ -1,0 +1,14 @@
+#!/bin/bash
+
+############################################################################
+#
+# Copyright (c) 2013 - Kyle Frost (frostincredible@gmail.com)
+#
+# This setup script is 100% free.  This script file is intended for personal
+# and/or educational use only.         It may not be duplicated for monetary
+# benefit  or  any other purpose  without  the permission  of the developer.
+#
+############################################################################
+
+hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -volname 'Android' -size 60g ~/Android.dmg -attach
+

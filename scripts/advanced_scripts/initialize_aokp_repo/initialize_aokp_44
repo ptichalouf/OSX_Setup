@@ -1,0 +1,23 @@
+#!/bin/bash
+
+############################################################################
+#
+# Copyright (c) 2013 - Kyle Frost (frostincredible@gmail.com)
+#      Mod by ptichalouf@gmail.com
+# This setup script is 100% free.  This script file is intended for personal
+# and/or educational use only.         It may not be duplicated for monetary
+# benefit  or  any other purpose  without  the permission  of the developer.
+#
+############################################################################
+
+PATH=/Volumes/Android/bin:$PATH
+echo
+curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > /Volumes/Android/bin/repo
+echo
+chmod a+x /Volumes/Android/bin/repo
+echo
+cd /Volumes/Android/AOKP/ 
+echo
+repo init -u https://github.com/AOKP/platform_manifest.git -b kitkat
+echo
+

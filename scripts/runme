@@ -1,0 +1,69 @@
+#!/bin/bash
+
+############################################################################
+#
+# Copyright (c) 2013 - Based on Kyle Frost (frostincredible@gmail.com)
+#    Moded by ptichalouf
+# This setup script is 100% free.  This script file is intended for personal
+# and/or educational use only.         It may not be duplicated for monetary
+# benefit  or  any other purpose  without  the permission  of the developer.
+#
+############################################################################
+
+
+version=3
+
+chmod 755 scripts/*
+chmod 755 scripts/dmg_sizes/*
+chmod 755 scripts/folder_names/*
+
+while :
+do
+
+  clear
+
+  echo
+  echo "============================================================"
+  echo "        OS X Build Set Up $version - based on Kyle Frost"
+  echo "                  By ptichalouf@gmail.com "
+  echo "============================================================"
+  echo
+  echo "                     ---Main Menu---"
+  echo
+  echo "  1 - Create DMG"
+  echo "  2 - Install required files (MUST install MacPorts first)"
+  echo "         MacPorts available free at www.macports.org"
+  echo "  3 - Set up folders"
+  echo
+  echo "  WARNING: DO NOT RUN ADVANCED MENU UNTIL"
+  echo "  YOU HAVE RUN ALL 3 ABOVE, OR HAVE DONE"
+  echo "  THEM ALL MANUALLY. THANK YOU."
+  echo
+  echo "  4 - Initialize Repo"
+  echo
+  echo "  5 - Build ROM"
+  echo
+  echo "  0 - Advanced Menu"
+  echo
+  echo "  x - Exit"
+  echo
+  echo -n "Enter option: "
+  read opt
+
+  if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) clear; scripts/create_dmg; continue;; 
+      2) scripts/install_files; continue;; 
+      3) scripts/setup_folders; continue;;
+      4) scripts/setup_folders; continue;;
+      0) scripts/advanced_menu $version; continue;;
+      x) scripts/dummy_script; clear; echo; echo "Goodbye."; echo; exit 1;;
+      *) echo "Invalid option"; continue;;
+    esac
+  fi
+
+  scripts/press_enter
+
+done
+

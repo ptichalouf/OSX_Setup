@@ -1,0 +1,56 @@
+#!/bin/bash
+
+############################################################################
+#
+# Copyright (c) 2013 - Kyle Frost (frostincredible@gmail.com)
+#          Mod by (ptichalouf@gmail.com)
+# This setup script is 100% free.  This script file is intended for personal
+# and/or educational use only.         It may not be duplicated for monetary
+# benefit  or  any other purpose  without  the permission  of the developer.
+#
+############################################################################
+
+version=$1
+
+chmod 755 scripts/advanced_scripts/initialize_liquid_repo/*
+
+while :
+do
+
+  clear
+
+  echo
+  echo "============================================================"
+  echo "        OS X Build Set Up $version - based on Kyle Frost"
+  echo "                      By @ptichalouf"
+  echo "============================================================"
+  echo
+  echo "                    ---Liquid REPO---"
+  echo
+  echo "            MUST INSTALL XCODE BEFORE BUILDING!"
+  echo "            XCODE IS FREE IN THE MAC APP STORE!"
+  echo
+  echo "  1 - Initialize Liquid Repo KitKat"
+  echo "  2 - Initialize Liquid Repo JB 3"
+  echo
+  echo "  0 - Go to Main Menu"
+  echo
+  echo -n "Enter option: "
+  read opt
+
+  if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) scripts/advanced_scripts/initialize_liquid_repo/initialize_liquid_44; continue;; 
+      2) scripts/advanced_scripts/initialize_liquid_repo/initialize_liquid_jb3; continue;;
+      0) exit 1;;
+      *) echo "Invalid option"; continue;;
+    esac
+  fi
+
+  scripts/press_enter
+
+done
+
+
+

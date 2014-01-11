@@ -1,0 +1,58 @@
+#!/bin/bash
+
+############################################################################
+#
+# Copyright (c) 2013 - Kyle Frost (frostincredible@gmail.com)
+#          Mod by (ptichalouf@gmail.com)
+# This setup script is 100% free.  This script file is intended for personal
+# and/or educational use only.         It may not be duplicated for monetary
+# benefit  or  any other purpose  without  the permission  of the developer.
+#
+############################################################################
+
+version=$1
+
+chmod 755 scripts/advaned_scripts/initialize_aokp_repo/*
+
+while :
+do
+
+  clear
+
+  echo
+  echo "============================================================"
+  echo "        OS X Build Set Up $version - based on Kyle Frost"
+  echo "                      By @ptichalouf"
+  echo "============================================================"
+  echo
+  echo "                    ---AOKP REPO---"
+  echo
+  echo "            MUST INSTALL XCODE BEFORE BUILDING!"
+  echo "            XCODE IS FREE IN THE MAC APP STORE!"
+  echo
+  echo "  1 - Initialize AOKP Repo KitKat"
+  echo "  2 - Initialize AOKP Repo JB MR2"
+  echo "  3 - Initialize AOKP Repo JB MR1"
+  echo
+  echo "  0 - Go to Main Menu"
+  echo
+  echo -n "Enter option: "
+  read opt
+
+  if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) scripts/advanced_scripts/initialize_aokp_repo/initialize_aokp_44; continue;; 
+      2) scripts/advanced_scripts/initialize_aokp_repo/initialize_aokp_jbmr2; continue;;
+      3) scripts/advanced_scripts/initialize_aokp_repo/initialize_aokp_jbmr1; continue;; 
+      0) exit 1;;
+      *) echo "Invalid option"; continue;;
+    esac
+  fi
+
+  scripts/press_enter
+
+done
+
+
+

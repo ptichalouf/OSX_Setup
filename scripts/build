@@ -1,0 +1,75 @@
+#!/bin/bash
+
+############################################################################
+#
+# Copyright (c) 2013 - Kyle Frost (frostincredible@gmail.com)
+#          Mod by (ptichalouf@gmail.com)
+# This setup script is 100% free.  This script file is intended for personal
+# and/or educational use only.         It may not be duplicated for monetary
+# benefit  or  any other purpose  without  the permission  of the developer.
+#
+############################################################################
+
+version=$1
+
+chmod 755 scripts/advanced_scripts/*
+
+while :
+do
+
+  clear
+
+  echo
+  echo "============================================================"
+  echo "        OS X Build Set Up $version - based on Kyle Frost"
+  echo "                      By @ptichalouf"
+  echo "============================================================"
+  echo
+  echo "                    ---Build Menu---"
+  echo
+  echo "            MUST INSTALL XCODE BEFORE BUILDING!"
+  echo "            XCODE IS FREE IN THE MAC APP STORE!"
+  echo
+  echo "  When building, it will give you a list"
+  echo "  of devices. Enter the number for your device"
+  echo "  configuration and the build will continue."
+  echo "  It will take a while the first time, as the"
+  echo "  source must first completely download."
+  echo
+  echo "  1 - Build AOKP"
+  echo "  2 - Build CM"
+  echo "  3 - Build Paranoid"
+  echo "  4 - Build OMNI"
+  echo "  5 - Build LIQUID"
+  echo "  6 - Build CODENAME"
+  echo "  7 - Build CARBON"
+  echo
+  echo "  Note: When the build is complete, you can"
+  echo "        find the finished ZIP in the Builds"
+  echo "        folder on your Android disk image."
+  echo
+  echo "  0 - Go to Main Menu"
+  echo
+  echo -n "Enter option: "
+  read opt
+
+  if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) scripts/advanced_scripts/build_aokp; continue;;
+      2) scripts/advanced_scripts/build_cm; continue;;
+      3) scripts/advanced_scripts/build_pa; continue;;  
+      4) scripts/advanced_scripts/build_omni; continue;;
+      5) scripts/advanced_scripts/build_liquid; continue;;
+      6) scripts/advanced_scripts/build_cna; continue;;
+      7) scripts/advanced_scripts/build_carbon; continue;;  
+      0) exit 1;;
+      *) echo "Invalid option"; continue;;
+    esac
+  fi
+
+  scripts/press_enter
+
+done
+
+

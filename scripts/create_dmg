@@ -1,0 +1,55 @@
+#!/bin/bash
+
+############################################################################
+#
+# Copyright (c) 2013 - Kyle Frost (frostincredible@gmail.com)
+#               Mod by (ptichalouf@gmail.com)
+# This setup script is 100% free.  This script file is intended for personal
+# and/or educational use only.         It may not be duplicated for monetary
+# benefit  or  any other purpose  without  the permission  of the developer.
+#
+############################################################################
+
+version=$1
+
+while :
+do
+
+  clear
+
+  echo
+  echo "           ---Choose Size of DMG to Create---"
+  echo 
+  echo "             WARNING: ONLY USE ONE, ONE TIME"
+  echo "            STEP DOES NOT NEED REPEATED LATER"
+  echo
+  echo "  1 - 25GB (Minimum)"
+  echo "  2 - 30GB"
+  echo "  3 - 40GB"
+  echo "  4 - 50GB"
+  echo "  5 - 60GB"
+  echo "  6 - 120GB"
+  echo
+  echo "  0 - Cancel"
+  echo
+  echo -n "Enter option: "
+  read opt
+
+  if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) scripts/dmg_sizes/25; exit 1;; 
+      2) scripts/dmg_sizes/30; exit 1;; 
+      3) scripts/dmg_sizes/40; exit 1;;
+      4) scripts/dmg_sizes/50; exit 1;;
+      5) scripts/dmg_sizes/60; exit 1;;
+      6) scripts/dmg_sizes/120; exit 1;;
+      0) exit 1;;
+      *) echo "Invalid option"; continue;;
+    esac
+  fi
+
+  scripts/press_enter
+
+done
+

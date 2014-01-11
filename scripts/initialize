@@ -1,0 +1,69 @@
+#!/bin/bash
+
+############################################################################
+#
+# Copyright (c) 2013 - Kyle Frost (frostincredible@gmail.com)
+#          Mod by (ptichalouf@gmail.com)
+# This setup script is 100% free.  This script file is intended for personal
+# and/or educational use only.         It may not be duplicated for monetary
+# benefit  or  any other purpose  without  the permission  of the developer.
+#
+############################################################################
+
+version=$3
+
+chmod 755 scripts/advanced_scripts/*
+chmod 755 scripts/advanced_scripts/initialize_aokp_repo/*
+chmod 755 scripts/advanced_scripts/initialize_cm_repo/*
+chmod 755 scripts/advanced_scripts/initialize_liquid_repo/*
+chmod 755 scripts/advanced_scripts/initialize_omni_repo/*
+
+while :
+do
+
+  clear
+
+  echo
+  echo "============================================================"
+  echo "        OS X Build $version - based on Kyle Frost"
+  echo "                      By @ptichalouf"
+  echo "============================================================"
+  echo
+  echo "                    ---Advanced Menu---"
+  echo
+  echo "            MUST INSTALL XCODE BEFORE BUILDING!"
+  echo "            XCODE IS FREE IN THE MAC APP STORE!"
+  echo
+  echo "  1 - Initialize AOKP Repo"
+  echo "  2 - Initialize CM Repo"
+  echo "  3 - Initialize PARANOID Repo"
+  echo "  4 - Initialize OMNI Repo"
+  echo "  5 - Initialize LIQUID Repo"
+  echo "  6 - Initialize CODENAME Repo"
+  echo "  7 - Initialize CARBON Repo"
+  echo
+  echo "  0 - Go to Main Menu"
+  echo
+  echo -n "Enter option: "
+  read opt
+
+  if [ "$?" != "1" ]
+  then
+    case $opt in
+      1) scripts/advanced_scripts/initialize_aokp; continue;; 
+      2) scripts/advanced_scripts/initialize_cm; continue;;
+      3) scripts/advanced_scripts/initialize_pa; continue;; 
+      4) scripts/advanced_scripts/initialize_omni; continue;; 
+      5) scripts/advanced_scripts/initialize_liquid; continue;; 
+      6) scripts/advanced_scripts/initialize_cna; continue;; 
+      7) scripts/advanced_scripts/initialize_carbon; continue;;   
+      0) exit 1;;
+      *) echo "Invalid option"; continue;;
+    esac
+  fi
+
+  scripts/press_enter
+
+done
+
+

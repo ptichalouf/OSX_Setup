@@ -1,0 +1,17 @@
+#!/bin/bash
+
+############################################################################
+#
+# Copyright (c) 2013 - Kyle Frost (frostincredible@gmail.com)
+#
+# This setup script is 100% free.  This script file is intended for personal
+# and/or educational use only.         It may not be duplicated for monetary
+# benefit  or  any other purpose  without  the permission  of the developer.
+#
+############################################################################
+
+
+mkdir /Volumes/Android/OUT
+mkdir /Volumes/Android/Builds
+mkdir /Volumes/Android/AOKP
+mkdir /Volumes/Android/bin
